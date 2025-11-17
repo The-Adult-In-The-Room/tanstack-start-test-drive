@@ -15,3 +15,6 @@ export const loresTable = pgTable('lores', {
     .defaultNow()
     .$onUpdate(() => new Date()),
 })
+
+export type Lore = typeof loresTable.$inferSelect
+export type NewLore = typeof loresTable.$inferInsert
