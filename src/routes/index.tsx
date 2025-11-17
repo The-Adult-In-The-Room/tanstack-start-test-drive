@@ -159,7 +159,9 @@ function App() {
         <div className="max-w-6xl mx-auto">
           {/* Add Button */}
           <div className="mb-8 flex justify-between items-center">
-            <h1 className="text-4xl font-bold text-white">Lore Collection</h1>
+            <h1 className="text-4xl font-bold text-white">
+              Where the lore lives
+            </h1>
             <Dialog open={open} onOpenChange={handleOpenChange}>
               <DialogTrigger asChild>
                 <Button className="bg-slate-600 hover:bg-slate-500 text-white font-semibold">
