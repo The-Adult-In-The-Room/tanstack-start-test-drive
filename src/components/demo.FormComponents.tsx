@@ -15,7 +15,11 @@ export function SubscribeButton({ label }: { label: string }) {
   return (
     <form.Subscribe selector={(state) => state.isSubmitting}>
       {(isSubmitting) => (
-        <Button type="submit" disabled={isSubmitting}>
+        <Button 
+          type="submit" 
+          disabled={isSubmitting}
+          className="bg-slate-600 hover:bg-slate-500 text-white font-semibold px-6 py-2 transition-colors"
+        >
           {label}
         </Button>
       )}
@@ -54,7 +58,7 @@ export function TextField({
 
   return (
     <div>
-      <Label htmlFor={label} className="mb-2 text-xl font-bold">
+      <Label htmlFor={label} className="mb-2 text-xl font-bold text-white">
         {label}
       </Label>
       <Input
@@ -62,6 +66,7 @@ export function TextField({
         placeholder={placeholder}
         onBlur={field.handleBlur}
         onChange={(e) => field.handleChange(e.target.value)}
+        className="bg-slate-800 border-slate-500 text-white placeholder:text-slate-400"
       />
       {field.state.meta.isTouched && <ErrorMessages errors={errors} />}
     </div>
@@ -80,7 +85,7 @@ export function TextArea({
 
   return (
     <div>
-      <Label htmlFor={label} className="mb-2 text-xl font-bold">
+      <Label htmlFor={label} className="mb-2 text-xl font-bold text-white">
         {label}
       </Label>
       <ShadcnTextarea
@@ -89,6 +94,7 @@ export function TextArea({
         onBlur={field.handleBlur}
         rows={rows}
         onChange={(e) => field.handleChange(e.target.value)}
+        className="bg-slate-800 border-slate-500 text-white placeholder:text-slate-400"
       />
       {field.state.meta.isTouched && <ErrorMessages errors={errors} />}
     </div>
