@@ -1,7 +1,17 @@
-import { pgTable, serial, text, timestamp } from 'drizzle-orm/pg-core'
+import { sql } from 'drizzle-orm'
+import { pgTable, text, timestamp, uuid, varchar } from 'drizzle-orm/pg-core'
 
-export const todos = pgTable('todos', {
-  id: serial('id').primaryKey(),
-  title: text('title').notNull(),
-  createdAt: timestamp('created_at').defaultNow(),
+export const loresTable = pgTable('lores', {
+  id: uuid()
+    .primaryKey()
+    .default(sql`gen_random_uuid()`),
+  title: varchar({ length: 255 }).notNull(),
+  subtitle: varchar({ length: 255 }).notNull().default('N/A'),
+  game: varchar({ length: 255 }).notNull().default('N/A'),
+  text: text().notNull(),
+  createdAt: timestamp().notNull().defaultNow(),
+  updatedAt: timestamp()
+    .notNull()
+    .defaultNow()
+    .$onUpdate(() => new Date()),
 })
