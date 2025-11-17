@@ -253,7 +253,11 @@ function App() {
                   <p className="text-sm text-slate-300 mb-2">{card.game}</p>
                   <p className="text-sm text-slate-100">{card.text}</p>
                   <p className="text-xs text-slate-400 mt-4">
-                    {new Date(card.createdAt).toLocaleDateString()}
+                    {new Date(card.createdAt).toLocaleDateString('en-US', {
+                      year: 'numeric',
+                      month: 'short',
+                      day: 'numeric',
+                    })}
                   </p>
                 </CardContent>
               </Card>
