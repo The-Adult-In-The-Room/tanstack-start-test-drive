@@ -23,7 +23,7 @@ import {
 import { Button } from '@/components/ui/button'
 import { db } from '@/db'
 import { loresTable } from '@/db/schema'
-import { useAppForm } from '@/hooks/demo.form'
+import { useAppForm } from '@/hooks/form'
 
 type LoreFormData = Pick<Lore, 'title' | 'subtitle' | 'game' | 'text'>
 
