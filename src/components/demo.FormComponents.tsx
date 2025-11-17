@@ -15,8 +15,8 @@ export function SubscribeButton({ label }: { label: string }) {
   return (
     <form.Subscribe selector={(state) => state.isSubmitting}>
       {(isSubmitting) => (
-        <Button 
-          type="submit" 
+        <Button
+          type="submit"
           disabled={isSubmitting}
           className="bg-slate-600 hover:bg-slate-500 text-white font-semibold px-6 py-2 transition-colors"
         >
