@@ -22,6 +22,7 @@ const config = defineConfig({
       },
     }),
   ],
+  nitro: {},
 })
 
 export default config
